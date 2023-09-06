@@ -1,0 +1,20 @@
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        i=0
+        while(i<len(nums)):
+            if(nums[i]==val):
+                nums[i],nums[-1] = nums[-1],nums[i]
+                nums.pop()
+            else:
+                i+=1
+Explanation:
+Given: 1 array with 1 value(array in order)
+We have to return length of array by rejecting the value given in the question.
+Solution:
+1)Use while loop set a condition such that when the value of i which starts from 0 is equal to the value, swap that particular i value with the last element in that array.
+2)Then pop that value because it matches with the value given in the question and we don't want that.
+3)If that i does not match with the value just go to the next element to print.
+Here if we try to use for loop instead of while, then we won't get the output because while loop keeps iterating until the condition(i<lens(nums)) becomes false.
+Why are we swapping?
+if in an array the numbers to be removed are very far away and if the array elements are very long,the iteration process will become complex and wil take time.Therefore through swapping it becomes simpler.
+
