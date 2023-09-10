@@ -1,0 +1,20 @@
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        j = 1
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i - 1]:
+                nums[j] = nums[i]
+                j += 1
+        return j
+
+Explanation:
+Given : 1 array
+To do: Remove the duplicate elements from the given array and return the same array in ascending order
+Note: The problem should be solved in O(n) time complexity (that means we should not print the result in the new array and take up extra memory space)
+1) initialize the value of j=1 because the value at index 0 is unchanged after updation
+2) the inner loop also starts from 1 and ends with the length of the array
+3) then compare the 1st value with the previous value and check if the numbers are repeated or it is a unique value.
+4) if it is a unique value, in place of the current value place the unique value.
+5) if it is the same value then it has to be removed obviously because it is a duplicate value. Therefore in this case leave that value as such and move to the next value for the above comparison and updation.
+6) Increment j so that it moves to the next value after comparison.
+7) When the loop ends,return the length of that loop.
