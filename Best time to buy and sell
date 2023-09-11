@@ -1,0 +1,26 @@
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        i=0 #buy
+        j=1 #sell
+        max_profit=0
+        while j<len(prices):
+            current_profit=prices[j] - prices[i]
+            if prices[i] < prices[j]:
+                max_profit=max(current_profit,max_profit)
+            else:
+                i=j
+            j+=1
+        return max_profit
+Explanation:
+Given:array of prices
+To do: According to the prices, we have to find the best days for buying and selling stock.
+We cannot sell a product without buying it.Also we must make sure that we get profit out of it.
+To calculate profit: selling price - buying price
+Step 1) Assume buying price as the left side of the array and selling price as the right side.
+Step 2) Initialize buying price as 0 and selling price as 1.
+Step 3) Using while loop for the array of prices declare the formula for the current profit.
+Step 4) if the buying price is less than selling price, then we will get the profit. Therefore update the maximum from the current profit and the max profit.
+Step 5) if the buying price is greater than selling price, we will not be able to get profit. Hence move on to the next pointer and increment the right side of the array by 1.
+Step 6) Follow this logic for all the price comparisons.
+Step 7) return the profit from the total.
+
