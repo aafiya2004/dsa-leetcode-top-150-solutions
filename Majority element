@@ -1,0 +1,12 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        nums.sort()
+        n=len(nums)
+        return nums[n//2]
+
+Explanation:
+Given:1 array
+To do: print the element which is repeating majority times in that array
+1) Sort the array in ascending order
+2) compute using the formula nums[n//2] where n will be the length of the array.
+This problem is solved in O(nlog n) time complexity as the array is sorted and then computed.
