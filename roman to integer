@@ -1,0 +1,17 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        roman={"I":1, "V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}
+        ans=0
+        for i in range(len(s)):
+            if i+1< len(s) and roman[s[i]] < roman[s[i+1]]:
+                ans-=roman[s[i]]
+            else:
+                ans+=roman[s[i]]
+        return ans
+Explanation:
+Given: array of romans
+To do: It's corresponding integer
+Step 1: define the values of Roman letters using dictionary
+Step 2: If the current value of the roman letter is less than the next value, then the current value will be taken as (-) and subtracted with answer
+Step 3: Otherwise the current value will be added with the already computed answer.
+Step 4: The answer is called.
