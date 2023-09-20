@@ -1,0 +1,15 @@
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+     stripping=s.strip()
+     splitting=stripping.split()
+     length=splitting[-1]
+     return len(length)
+
+Explanation:
+Given: A string
+To do: Return the length of the last word
+Step 1: Remove the whitespaces in the string using strip()
+Step 2: Put the string into a list using split()
+Step 3: To get the last word from the list the index can be sliced with value -1
+Step 4: Return the length of that word using len()
+
