@@ -1,0 +1,7 @@
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        return haystack.find(needle)
+Explanation:
+Given: 2 strings(haystack,needle)
+To do: Find the word which is assigned to needle in the haystack and return the first occurence of that word.If there is no such word in haystack return -1
+The find() method is used to find the first occurence of a word in a particular string and itv returns -1 if there is no such word.
