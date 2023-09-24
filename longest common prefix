@@ -1,0 +1,22 @@
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        res=""
+        v=sorted(strs)
+        first=v[0]
+        last=v[-1]
+        for i in range(min(len(first),len(last))):
+            if first[i] != last[i]:
+                return res
+            else:
+                res+=first[i]
+        return res
+Explanation:
+Given: An array
+To do: find the common letters in all the words given
+Step 1: declare a space for storing thde common prefix
+Step 2: Sort the array
+Step 3: Traverse the First and last array
+Step 4: If the the letters in the 1st array is not equal to the second array return the result as allotted before as space
+Step 5: If there is a coomon letter found add the res with the first common letter found.
+Step 6: Return the result
+ 
