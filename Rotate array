@@ -1,0 +1,16 @@
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        k=k%len(nums)
+        for i in range(k):
+            a=nums.pop()
+            nums.insert(0,a)
+Explanation:
+Given: An array and K value
+To do: Rotate the elements of the array k times
+Step 1: Check if k is greater than the length of nums. If so, reduce k by taking its modulo with the length of nums.
+Step 2: Perform the rotation by iterating k times using a for loop:
+• Remove the last element of nums using pop() and store it in a variable a.
+• Insert the value a at the beginning of nums using insert().
